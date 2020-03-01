@@ -6,14 +6,344 @@
     <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css"/>
   </head>
+  <style>
+    body, html {
+      height: 100%;
+    }
+    #ellipse_page_2{
+      float: middle;
+
+      position: absolute;
+      width: 133px;
+      height: 67px;
+      left: 120px;
+      top: 61px;
+
+    }
+
+    #dry_bar{
+      position: absolute;
+      width: 168px;
+      height: 21px;
+      left: -7px;
+      top: -4px;
+
+      left: 36px;
+      right: 171px;
+      top: 218px;
+      bottom: 573px;
+      background: #8FE197;
+      border-radius: 15px;
+    }
+
+    #oily_bar{
+      position: absolute;
+      width: 168px;
+      height: 21px;
+      left: -7px;
+      top: -4px;
+
+      left: 36px;
+      right: 171px;
+      top:  286px;
+      bottom: 505px;
+      background: #8FE197;
+      border-radius: 15px;
+    }
+    #acne_bar{
+      position: absolute;
+      width: 168px;
+      height: 21px;
+      left: -7px;
+      top: -4px;
+
+      left: 36px;
+      right: 171px;
+      top: 354px;
+      bottom: 487px;
+      background: #8FE197;
+      border-radius: 15px;
+    }
+    #anti_bar{
+      position: absolute;
+      width: 168px;
+      height: 21px;
+      left: -7px;
+      top: -4px;
+
+      left: 36px;
+      right: 171px;
+      top: 422px;
+      bottom: 369px;
+      background: #8FE197;
+      border-radius: 15px;
+    }
+    #hyper_bar{
+      position: absolute;
+      width: 168px;
+      height: 21px;
+      left: -7px;
+      top: -4px;
+
+      left: 36px;
+      right: 171px;
+      top: 488px;
+      bottom: 303px;
+      background: #8FE197;
+      border-radius: 15px;
+    }
+    #sensit_bar{
+      position: absolute;
+      width: 168px;
+      height: 21px;
+      left: -7px;
+      top: -4px;
+
+      left: 36px;
+      right: 171px;
+      top: 554px;
+      bottom: 237px;
+      background: #8FE197;
+      border-radius: 15px;
+    }
+
+    #userquestion{
+      position: absolute;
+      width: 276px;
+      height: 11px;
+      left: 31px;
+      top: 157px;
+
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 17px;
+      line-height: 20px;
+
+      color: #000000;
+    }
+
+    #skin_type{
+      position: absolute;
+      width: 297px;
+      height: 28px;
+      left: 16px;
+      top: 168px;
+
+      background: #FFFDFD;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      filter: blur(2px);
+      border-radius: 10px;
+
+      z-index:-5;
+    }
+
+    #arrow_bar{
+      position: absolute;
+      width: 60px;
+      height: 22px;
+      left: 285px;
+      top: 700px;
+
+      background: #FFFFFF;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      //filter: blur(2px);
+      border-radius: 15px;
+    }
+
+    #arrow{
+      position: absolute;
+    width: 43px;
+    height: 0px;
+    left: 293px;
+    top: 767px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 9px;
+    }
+
+    #select{
+      position: absolute;
+      width: 276px;
+      height: 11px;
+      left: 16px;
+      top: 173px;
+
+      font-family: Karma;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 17px;
+      line-height: 25px;
+
+      color: #000000;
+    }
+  </style>
+  <script>
+    var cleanser_info = '{"product_name": [' +
+'{"name": "Versed Wash It Out Gel Cleanser - 6.4 fl oz","brand_name": "Versed", "brand_name_url": "https://www.target.com/b/versed/-/N-k436q","price": "$12.99", "image": "","image_url": "https://target.scene7.com/is/image/Target/GUEST_6c6409ac-0a18-4967-bd5b-f98a960b1864?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Water, Coco-Glucoside, Sodium Lauroyl Sarcosinate, Rosa Centifolia Flower Water, Sodium Cocoyl Apple Amino Acids, Fucus Vesiculosus Extract, Mentha Piperita Oil, Lactic Acid, Phenoxyethanol, Cocamidopropyl Betaine, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Sodium Benzoate, Coco-Betaine, Sodium Chloride, Sodium Hydroxide, Sodium Cocoyl Isethionate, Sodium Methyl Cocoyl Taurate, Dehydroacetic Acid, Tetrasodium Edta, Benzyl Alcohol, Limonene"},' +
+'{"name": "Versed Day Dissolve Cleansing Balm - 2.3 fl oz","brand_name": "Versed","brand_name_url": "https://www.target.com/b/versed/-/N-k436q","price": "$17.99","image": "","image_url": "https://target.scene7.com/is/image/Target/GUEST_c9b9c6f8-dea1-44b1-be39-b0488540d8a5?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Ethylhexyl Palmitate, Isopropyl Palmitate, Peg-20 Glyceryl Triisostearate, Polyethylene, Tocopheryl Acetate, Eucalyptus Globulus Leaf Oil, Eugenia Caryophyllus Leaf Oil, Simmondsia Chinensis Seed Oil, Persea Gratissima Oil, Prunus Armeniaca Kernel Oil, Sclerocarya Birrea Seed Oil, Sesamum Indicum Seed Oil, Butyl Methoxydibenzoylmethane, Caprylyl Glycol, Eugenol, Limonene"},' +
+'{"name": "Neutrogena Bright Boost Resurfacing Micro Polish - 2.6 fl oz","brand_name": "Neutrogena","brand_name_url": "https://www.target.com/b/neutrogena/-/N-5xvoe","price": "$7.99","image": "","image_url": "https://target.scene7.com/is/image/Target/GUEST_66cdca85-9571-4709-a07c-2f385d631dc6?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Glycolic, alpha hydroxy acids"},' +
+'{"name": "Neutrogena Exfoliating Blackhead Salicylic Acid Face Scrub - 4.2oz","brand_name": "Neutrogena","brand_name_url": "https://www.target.com/b/neutrogena/-/N-5xvoe","price": "$6.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_d59cc364-7fbe-4504-96a8-f1c14ec38647?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Water, Sodium Laureth Sulfate, Decyl Glucoside, Cocamidopropyl Betaine, Glycerin, Propylene Glycol, Peg-55 Propylene Glycol Oleate, Sodium Chloride, Peg-7 Glyceryl Cocoate, Phenoxyethanol, Fragrance, Panthenol, Bisabolol, Tocopheryl Acetate, Polyquaternium-39, Disodium Edta, Benzophenone-4, Citric Acid, Iodopropynyl Butylcarbamate, Citrullus Lanatus Fruit Extract, Benzyl Alcohol, Hexyl Cinnamal, Limonene, Linalool, Red 33."},' +
+'{"name": "Cetaphil Normal to Oily Skin Daily Facial Cleanser - 16oz","brand_name": "Cetaphil","brand_name_url": "https://www.target.com/b/cetaphil/-/N-5cx4j","price": "$9.59","image_url": "https://target.scene7.com/is/image/Target/GUEST_2d095201-24ea-4e8b-bbe2-a05974c70172?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Water, Glycerin, Peg-200 Hydrogenated Glyceryl Palmate, Butylene Glycol, Sodium Lauroyl Sarcosinate, Acrylates/Steareth-20 Methacrylate Copolymer, Peg-7 Glyceryl Cocoate, Sodium Laureth Sulfate, Phenoxyethanol, Masking Fragrance, Panthenol, Peg-60 Hydrogenated Castor Oil, Disodium Edta, Methylparaben"},' +
+'{"name": "St. Ives Fresh Skin Face Scrub - Apricot - 6 oz","brand_name": "St. Ives","brand_name_url": "https://www.target.com/b/st-ives/-/N-cz503","price": "$4.49","image_url": "https://target.scene7.com/is/image/Target/GUEST_cfec75e2-186f-4e64-95ff-31e2f33a8272?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Water, Juglans Regia Shell Powder, Glyceryl Stearate Se, Glycerin, Cetearyl Alcohol, Zea Mays Kernel Meal, Cetyl Alcohol, Sodium Lauryl Sulfoacetate, Cocamidopropyl Betaine, Glyceryl Stearate, Peg-100 Stearate, Cetyl Acetate, Benzyl Alcohol, Ceteareth-20, Acetylated Lanolin Alcohol, Carbomer, Polysorbate 60, Triethanolamine, Fragrance, Disodium Edta, Benzoic Acid, Sorbic Acid, Prunus Armeniaca Fruit Extract, Titanium Dioxide."},' +
+'{"name": "Cetaphil Daily Facial Cleanser - 8 fl oz","brand_name": "Cetaphil","brand_name_url": "https://www.target.com/b/cetaphil/-/N-5cx4j","price": "$6.39","image_url": "https://target.scene7.com/is/image/Target/GUEST_b29a4391-c4c5-4458-8beb-18d68ab94bc1?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Water, Glycerin, Peg-200 Hydrogenated Glyceryl Palmate, Butylene Glycol, Sodium Lauroyl Sarcosinate, Acrylates/Steareth-20 Methacrylate Copolymer, Peg-7 Glyceryl Cocoate, Sodium Laureth Sulfate, Phenoxyethanol, Masking Fragrance, Panthenol, Peg-60 Hydrogenated Castor Oil, Disodium Edta, Methylparaben."},' +
+'{"name": "Apricot Blemish Scrub 6oz - Up&Up™","brand_name": "Up&Up","brand_name_url": "https://www.target.com/b/upup/-/N-4yn38","price": "$1.99","image": "","image_url": "https://target.scene7.com/is/image/Target/GUEST_374421c7-0cea-45ee-b6bd-0497213ffc95?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Water, Juglans Regia Shell Powder, Glyceryl Stearate Se, Propylene Glycol, Sodium Laureth Sulfate, Zea Mays Kernel Meal, Cocamidopropyl Betaine, Cetearyl Alcohol, Triethanolamine, Cetyl Alcohol, Peg-100 Stearate, Glyceryl Stearate, Cetyl Acetate, Ceteareth-20, Polysorbate 60, Carbomer, Acetylated Lanolin Alcohol, Fragrance, Phenethyl Alcohol, Ppg-2-Methyl Ether, Limonene, Linalool, Methylisothiazolinone, Glycerin, Prunus Armeniaca Fruit Extract, Titanium Dioxide."},' +
+'{"name": "Apricot Scrub - 6oz - Up&Up™","brand_name": "Up&Up","brand_name_url": "https://www.target.com/b/upup/-/N-4yn38","price": "$1.99","image": "","image_url": "https://target.scene7.com/is/image/Target/GUEST_49355b0f-fced-4578-8f96-3671cefe7054?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Water, Juglans Regia Shell Powder, Glyceryl Stearate, Propylene Glycol, Sodium Laureth Sulfate, Zea Mays Kernel Meal, Cetearyl Alcohol, Cocamidopropyl Betaine, Cetyl Alcohol, Peg-100 Stearate, Cetyl Acetate, Ceteareth-20, Polysorbate 60, Acetylated Lanolin Alcohol, Triethanolamine, Carbomer, Fragrance, Phenethyl Alcohol, Ppg-2-Methyl Ether, Limonene, Linalool, Methylisothiazolinone, Glycerin, Prunus Armeniaca Fruit Extract, Titanium Dioxide."},' +
+'{"name": "Aveeno Positively Radiant Skin Brightening Daily Scrub- 5oz","brand_name": "Aveeno","brand_name_url": "https://www.target.com/b/aveeno/-/N-5xvgb","price": "$5.69","image": "","image_url": "https://target.scene7.com/is/image/Target/GUEST_f929e063-2176-4b74-af5c-8942ab17f93d?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Water, Glycerin, Sodium Laureth Sulfate, Polyethylene, Peg-16 Soy Sterol, Lauryl Glucoside, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Phenoxyethanol, Glycol Distearate, Cocamidopropyl Betaine, Methylparaben, Butylene Glycol, Fragrance, Laureth-4, Tetrasodium Edta, Sodium Hydroxide Glycine Soja Protein"},' +
+'{"name": "Cetaphil Skin Cleanser Unscented - 16oz","brand_name": "Cetaphil","brand_name_url": "https://www.target.com/b/cetaphil/-/N-5cx4j","price": "$9.59","image_url": "https://target.scene7.com/is/image/Target/GUEST_a44d4f04-50b1-4eb4-a9d4-07b996a85128?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Water. Cetyl Alcohol, Propylene Glycol, Sodium Lauryl Sulfate, Stearyl Alcohol Methylparaben Propylparaben, Butylparaben"},' +
+'{"name": "CeraVe Hydrating Facial Cleanser for Normal to Dry Skin - 16 fl oz","brand_name": "CeraVe","brand_name_url": "https://www.target.com/b/cerave/-/N-55v99","price": "$14.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_61ef9d3e-08e8-4ae7-b7a4-04ab913f32ed?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Purified Water, Glycerin, Cetearyl Alcohol, Behentrimonium Methosulfate, Ceramide 3, Ceramide 6-11, Ceramide 1, Hyaluronic Acid, Cholesterol, Peg-40 Stearate, Glyceryl Stearate, Stearyl Alcohol, Polysorbate 20, Potassium Phosphate, Dipotassium Phosphate, Sodium Lauroyl Lactylate, Cetyl Alcohol, Disodium Edta, Phytosphingosine, Methylparaben, Propylparaben, Carbomer, Xanthan Gum"}]}';
+
+var moisturizers_info = '{ "product_name": [' +
+'{"name": "CeraVe PM Facial Moisturizing Lotion - 3 fl oz","brand_name": "CeraVe","brand_name_url": "https://www.target.com/b/cerave/-/N-55v99","price": "$12.39","image_url": "https://target.scene7.com/is/image/Target/GUEST_901e8a38-0665-4913-a5ea-f8794affa65a?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Purified Water, Glycerin, Caprylic/Capric Triglyceride, Niacinamide, Cetearyl Alcohol, Ceramide 3, Ceramide 6-Ii, Ceramide 1, Phytosphingosine, Hyaluronic Acid, Sodium Hydroxide, Dimethicone, Behentrimonium Methosulfate, Ceteareth-20, Polyglyceryl-3 Diisostearate, Cholesterol, Xanthan Gum, Carbomer, Disodium Edta, Dipotassium Phosphate, Potassium Phosphate, Sodium Lauroyl Lactylate, Methylparaben, Propylparaben"},' +
+'{"name": "Neutrogena Hydro Boost Hydrating Water Gel Face Moisturizer - 1.7 fl oz","brand_name": "Neutrogena","brand_name_url": "https://www.target.com/b/neutrogena/-/N-5xvoe","price": "","image_url": "https://target.scene7.com/is/image/Target/GUEST_1924b364-6704-493f-87e7-0b0049725161?wid=325&hei=325&qlt=80&fmt=pjpeg","ingredients": "Water, Dimethicone, Glycerin, Dimethicone/Vinyl Dimethicone Crosspolymer, Phenoxyethanol, Polyacrylamide, Cetearyl Olivate, Sorbitan Olivate, Dimethiconol, C13-14 Isoparaffin, Dimethicone Crosspolymer, Chlorphenesin, Carbomer, Laureth-7, Sodium Hyaluronate, Ethylhexylglycerin, Fragrance, C12-14 Pareth-12, Sodium Hydroxide, Blue 1"},' +
+'{"name": "Olay Regenerist Retinol24 Night Moisturizer - 1.7oz","brand_name": "Olay","brand_name_url": "https://www.target.com/b/olay/-/N-5s8w4","price": "$28.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_8c07a91e-102e-4ac1-8ff5-6bffdba8920a?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "WATER, DIMETHICONE, GLYCERIN, TAPIOCA STARCH, DIMETHICONE CROSSPOLYMER, RETINOL, RETINYL PROPIONATE, NIACINAMIDE, PALMITOYL PENTAPEPTIDE-4, POLYACRYLAMIDE, C13-14 ISOPARAFFIN, DMDM HYDANTOIN, POLYSORBATE 20, LAURETH-4, ACRYLATES/C10-30 ALKYL ACRYLATE CROSSPOLYMER, LAURETH-7, DIMETHICONOL, POLYMETHYLSILSESQUIOXANE, AMINOMETHYL PROPANOL, TITANIUM DIOXIDE, DISODIUM EDTA, IODOPROPYNYL BUTYLCARBAMATE, CAPRYL/CAPRYLIC TRIGLYCERIDE Vitamin B3, Amino-Peptide"},' +
+'{"name": "Unscented Neutrogena Hydro Boost Hyaluronic Acid Gel Face Moisturizer to hydrate and smooth extra-dry skin - 1.7oz","brand_name": "Neutrogena",brand_name_url": "https://www.target.com/b/neutrogena/-/N-5xvoe","price": "","image_url": "https://target.scene7.com/is/image/Target/GUEST_de8186b9-e498-447c-84f1-97a270ef2f23?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Dimethicone, Glycerin, Cetearyl Olivate, Polyacrylamide, Sorbitan Olivate, Phenoxyethanol, Dimethicone/Vinyl, Dimethicone Crosspolymer, Chlorphenesin, Laureth-7, Carbomer, Sodium Hyaluronate, Ethylhexylglycerin, C12-14 Pareth -12, Sodium Hydroxide"},' +
+'{"name": "CeraVe Facial Moisturizing Lotion AM with Sunscreen Broad Spectrum SPF 30 - 3oz","brand_name": "CeraVe","brand_name_url": "https://www.target.com/b/cerave/-/N-55v99","price": "$13.49","image_url": "https://target.scene7.com/is/image/Target/GUEST_b0242846-28be-4a2b-90ef-d5aa175a8232?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Homosalate, Meradimate, Octinoxate, Octocrylene, Zinc Oxide, Water, Niacinamide, Glycerin, Cetearyl Alcohol, Behentrimonium Methosulfate, Dimethicone, Bht, Ceramide Np, Ceramide Ap, Ceramide Eop, Carbomer, Triethoxycaprylylsilane, Methylparaben, Sodium Lauroyl Lactylate, Cholesterol, Aluminum Starch Octenylsuccinate, Disodium Edta, Propylparaben, Hydroxyethylcellulose, Hydrolyzed Hyaluronic Acid, Phytosphingosine, Xanthan Gum"},' +
+'{"name": "Olay Wrinkle Correction Serum - Vitamin B3 + Collagen Peptides - 1.3 fl oz","brand_name": "Olay","brand_name_url": "https://www.target.com/b/olay/-/N-5s8w4","price": "$28.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_94cd3745-d2a4-445b-8f84-febb30a9723b?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Dimethicone, Glycerin, Niacinamide, Butylene Glycol, Palmitoyl Pentapeptide-4, Palmitoyl Dipeptide-7**, Panthenol, Hydroxyacetophenone, Dimethiconol, Polysorbate 20, Disodium Edta, Dimethicone Crosspolymer, Carbomer, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Aminomethyl Propanol, Phenoxyethanol"},' +
+'{"name": "Cetaphil Moisturizing Lotion - 16 fl oz","brand_name": "Cetaphil","brand_name_url": "https://www.target.com/b/cetaphil/-/N-5cx4j","price": "$9.71","image_url": "https://target.scene7.com/is/image/Target/GUEST_5d0f150a-04ab-4417-9788-53c2fcf6f594?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Glycerin, Hydrogenated Polyisobutene, Ceteareth-20, Cetearyl Alcohol, Persea Gratissima Oil, Vitamin E, Dimethicone Sodium Levulinate, Sodium Anisate, Caprylyl Benzyl Alcohol, Panthenol (Vitamin B5), Stearoxytrimethylsilane, Stearyl Alcohol, Citric Acid, Acrylates/C10-30 Alkyl Acrylate Crosspolymer"},' +
+'{"name": "Cetaphil Daily Facial Moisturizer SPF 15 Unscented - 4oz","brand_name": "Cetaphil","brand_name_url": "https://www.target.com/b/cetaphil/-/N-5cx4j","price": "$10.61","image_url": "https://target.scene7.com/is/image/Target/GUEST_e17aefc3-ebc1-49c6-b440-a38b496136fb?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Avobenzone, Octocrylene, Water, Diisopropyl Adipate, Cyclomethicone, Glycerin, Glyceryl Stearate, Peg-100 Stearate, Polymethyl Methacrylate, Phenoxyethanol, Benzyl Alcohol, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Tocopheryl Acetate, Carbomer 940, Disodium Edta, Triethanolamine"},' +
+'{"name": "Neutrogena Ageless Intensives Hyaluronic Acid Wrinkle Cream Hyaluronic - 1.4oz","brand_name": "Neutrogena","brand_name_url": "https://www.target.com/b/neutrogena/-/N-5xvoe","price": "$15.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_51706355-c149-46a7-9c36-475e5609ca1c?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Ppg-2 Myristyl Ether Propionate, Cetearyl Alcohol, Cetyl Dimethicone, Pentaerythrityl Tetraethylhexanoate, Hexadecyl Stearate, Caprylyl Methicone, Dimethicone, Behenyl Alcohol, Ethylhexylglycerin, Squalane, Glycerin, Shea Butter, Bht, Panthenol, Allantoin, Arginine, Erythorbic Acid, Tocopherol, Retinol, Polysorbate 20, Sodium Hyaluronate, Dipotassium Glycyrrhizate, Bisabolol, C13-14 Isoparaffin, Laureth-7, Cetearyl Glucoside, Glyceryl Stearate, Peg-100 Stearate,Polyacrylamide, Nylon-12, Disodium Edta, Propylparaben, Ethylparaben, Methylparaben"},' +
+'{"name": "Clean & Clear Essentials Dual Action Facial Moisturizer - 4 fl oz","brand_name": "Clean & Clear","brand_name_url": "https://www.target.com/b/clean-clear/-/N-5t3fg","price": "$4.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_4f4050c9-d601-45f6-b8d0-a4a2f895d114?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Salicylic Acid, Water, Dicaprylyl Ether, Glycerin, Dimethicone, Neopentyl Glycol Diethylhexanoate, Neopentyl Glycol Diisostearate, Aluminum Starch Octenylsuccinate, Methyl Gluceth-20, Dicetyl Phosphate, Ceteth-10 Phosphate, Cetearyl Alcohol, Menthyl Lactate, Steareth-20, Steareth-2, Fragrance, Xanthan Gum, Lecithin, Disodium Edta, Sodium Hydroxide, Magnesium Aluminum Silicate, Bht"},' +
+'{"name": "CeraVe Skin Renewing Night Cream to Soften Skin- 1.7oz","brand_name": "CeraVe","brand_name_url": "https://www.target.com/b/cerave/-/N-55v99","price": "$13.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_81658ba2-d12b-472e-a359-6d921d4d3ee0?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Purified Water, Glycerin, Biosaccharide Gum-1, Caprylic/Capric Triglyceride, Shea Butter, Dimethicone/Vinyl Dimethicone Crosspolymer, Glyceryl Stearate Se, Stearic Acid, Cyclopentasiloxane, Cetyl Alcohol, Dimethicone, Saccharide Isomerate, Glycine Soja (Soybean) Sterols, Ceramide 6 11, Ceramide 3, Ceramide 1, Niacinamide, Hyaluronic Acid, Caprooyl Tetrapeptide-3, Tripeptide-1, Cholesterol, Phenoxyethanol, Cetearyl Alcohol, Carbomer, Behentrimonium Methosulphate, Sodium Hydroxide, Tocopherol, Allantoin, Ethylhexylglycerin, Butylene Glycol, Sodium Lauroyl Lactylate, Phytosphingosine, Dextran, Xanthan Gum"},' +
+'{"name": "Olay Regenerist Micro-Sculpting Cream Face Moisturizer - 1.7oz","brand_name": "Olay","brand_name_url": "https://www.target.com/b/olay/-/N-5s8w4","price": "$24.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_e738c8af-67f6-4cab-b6bb-a2a9c9ed6cce?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Glycerin, Isohexadecane, Niacinamide, Isopropyl Isostearate, Aluminum Starch Octenylsuccinate, Nylon-12, Dimethicone, Panthenol, Tocopheryl Acetate, Palmitoyl Pentapeptide-4, Sodium Peg-7 Olive Oil Carboxylate, Sodium Hyaluronate, Caprylic/Capric Triglyceride, Ceratonia Siliqua (Carob) Fruit Extract, Stearyl Alcohol, Polyethylene, Cetyl Alcohol, Behenyl Alcohol, Sodium Acrylates Copolymer, Titanium Dioxide, Benzyl Alcohol, Methylparaben, Ethylparaben, Dimethiconol, Polyacrylamide, Fragrance, Peg-100 Stearate, Propylparaben, Cetearyl Glucoside, Cetearyl Alcohol, C13-14 Isoparaffin, Disodium Edta, Citric Acid, Stearic Acid, Palmitic Acid, C12-13 Pareth-3, Laureth-7, Sodium Hydroxide, Mica"},' +
+'{"name": "Aveeno Positively Radiant Daily Face Soy Moisturizer - SPF 15 - 4 fl oz","brand_name": "Aveeno","brand_name_url": "https://www.target.com/b/aveeno/-/N-5xvgb","price": "","image_url": "https://target.scene7.com/is/image/Target/GUEST_f5916511-b1b9-4db0-b889-1d248c5c2b8e?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Avobenzone, Octinoxate, Octisalate, Water, C12-15 Alkyl Benzoate, Cetearyl Alcohol, Dimethicone, Soybean Seed Extract, Glycerin, Bis-Phenylpropyl Dimethicone, Arachidyl Alcohol, Phenoxyethanol, Cetearyl Glucoside, Panthenol, Benzyl Alcohol, Ethylene/Acrylic Acid Copolymer, Behenyl Alcohol, Steareth-2, Fragrance, Steareth-21, Polyacrylamide, Polymethyl Methacrylate, Arachidyl Glucoside, Disodium Edta, Methylparaben, C13-14 Isoparaffin, Ethylparaben, Butylparaben, Laureth-7, Benzalkonium Chloride, Propylparaben, Isobutylparaben, Iodopropynyl Butylcarbamate, Bht, Titanium Dioxide, Mica, Silica"},' +
+'{"name": "Neutrogena Oil-Free Daily Sensitive Skin Face Moisturizer - 4 fl oz","brand_name": "Neutrogena","brand_name_url": "https://www.target.com/b/neutrogena/-/N-5xvoe","price": "$9.59","image_url": "https://target.scene7.com/is/image/Target/GUEST_48187aa5-2b56-4f92-a9c3-437330921dab?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Glycerin, Ethylhexyl Palmitate, Dimethicone, Petrolatum, Cyclomethicone, Soybean (Glycine Soja) Sterols, Isopropyl Isostearate, Cetyl Alcohol, Peg-10 Soy Sterol, Glyceryl Stearate, Peg-100 Stearate, C 12 - 15 Alkyl Benzoate, Carbomer, Tetrasodium Edta, Sodium Hydroxide, Diazolidinyl Urea, Ethylparaben, Methylparaben, Propylparaben"},' +
+'{"name": "Olay Regenerist Fragrance Free Micro-Sculpting Cream - 1.7oz","brand_name": "Olay","brand_name_url": "https://www.target.com/b/olay/-/N-5s8w4","price": "$24.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_e97ab3d9-d4bb-401a-be2e-fc556483a421?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients":"Water, Glycerin, Isohexadecane, Niacinamide, Isopropyl Isostearate, Aluminum Starch Octenylsuccinate, Nylon-12, Dimethicone, Panthenol, Tocopheryl Acetate, Palmitoyl Pentapeptide-4, Sodium Peg-7 Olive Oil Carboxylate, Sodium Hyaluronate, Caprylic/Capric Triglyceride, Ceratonia Siliqua (Carob) Fruit Extract, Stearyl Alcohol, Polyethylene, Cetyl Alcohol, Behenyl Alcohol, Sodium Acrylates Copolymer, Titanium Dioxide, Benzyl Alcohol, Methylparaben, Ethylparaben, Dimethiconol, Polyacrylamide, Peg-100 Stearate, Propylparaben, Cetearyl Glucoside, Cetearyl Alcohol C13-14 Isoparaffin, Disodium Edta, Citric Acid, Stearic Acid, Palmitic Acid, C12-13 Pareth-3, Laureth-7, Sodium Hydroxide, Mica"},' +
+'{"name": "Unscented Sensitive Skin Facial Moisturizer - 4oz - Up&Up™","brand_name": "Up&Up","brand_name_url": "https://www.target.com/b/upup/-/N-4yn38","price": "$6.79","image_url": "https://target.scene7.com/is/image/Target/GUEST_e4987952-627e-4f4c-a628-088173aa6239?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Glycerin, Ethylhexyl Palmitate, Dimethicone, Petrolatum, Cyclomethicone, Glycine Soja (Soybean) Sterols, Isopropyl Isostearate, Cetyl Alcohol, Peg-10 Soy Sterol, Glyceryl Stearate, Peg-100 Stearate, C12-15 Alkyl Benzoate, Carbomer, Tetrasodium Edta, Sodium Hydroxide, Diazolidinyl Urea, Ethylparaben, Methylparaben, Propylparaben"},' +
+'{"name": "Unscented Facial Moisturizing Lotion with SPF 15 - 4oz - Up&Up™","brand_name": "Up&Up","brand_name_url": "https://www.target.com/b/upup/-/N-4yn38","price": "$6.49","image_url": "https://target.scene7.com/is/image/Target/GUEST_af1e3a76-1d77-4451-8563-80e5c9e7315e?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients:" "Avobenzone, Octisalate, Octocrylene, Oxybenzone, Water, Octyldodecyl Neopentanoate, Glycerin, Emulsifying Wax Nf, Glyceryl Stearate, Peg-100 Stearate, Dimethicone, Phenoxyethanol, Ethylhexylglycerin, Caprylyl Glycol, Carbomer, Triethanolamine, Disodium Edta, Ethylene Brassylate, Dipropylene Glycol, Dimethyl Heptenal"},' +
+'{"name": "Cetaphil Daily Hydrating Lotion - 3 fl oz","brand_name": "Cetaphil","brand_name_url": "https://www.target.com/b/cetaphil/-/N-5cx4j","price": "$11.24","image_url": "https://target.scene7.com/is/image/Target/GUEST_88a0e1bf-2690-423b-801b-8b86e1f5e03f?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Dicaprylyl Carbonate, Hydroxyethyl Urea, Cyclopentasiloxane, Glycerin, Glyceryl Stearate, Peg-100 Stearate, Hydrolyzed Hyaluronic Acid, Sodium Hydroxide, Homarine Hcl, Sodium Pca, Cetyl Alcohol, Caprylyl Glycol, Phenoxyethanol, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Erythritol"},' +
+'{"name": "Olay Regenerist Fragrance-Free Night Recovery Cream Moisturizer - 1.7oz","brand_name": "Olay","brand_name_url": "https://www.target.com/b/olay/-/N-5s8w4","price": "$25.49","image_url": "https://target.scene7.com/is/image/Target/GUEST_7b048f3d-e29b-4207-83fc-ea2033f386bd?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Dimethicone, Glycerin, Niacinamide, Dimethicone Crosspolymer, Polymethylsilsesquioxane, Polyacrylamide, Polyethylene, Panthenol, Tocopheryl Acetate, Palmitoyl Pentapeptide-4, Allantoin, Camellia Sinensis Leaf Extract, Sodium Peg-7 Olive Oil Carboxylate, C13-14 Isoparaffin, Titanium Dioxide, Dmdm Hydantoin, Laureth-4, Dimethiconol, Laureth-7, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Aminomethyl Propanol, Disodium Edta, Iodopropynyl Butylcarbamate"},' +
+'{"name": "No7 Lift & Luminate Triple Action Day Cream SPF 30 - 1.69oz","brand_name": "No7","brand_name_url": "https://www.target.com/b/no7/-/N-l31f9","price": "$26.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_b16357df-a75b-47f8-96f0-94caa580266b?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Avobenzone, Octisalate, Octocrylene, Aqua (Water), C12-15 Alkyl Benzoate, Glycerin, Tribehenin, Alcohol Denat., Dimethicone, Butylene Glycol, Aluminum Starch Octenylsuccinate, Mica, Cetearyl Alcohol, Butyrospermum Parkii (Shea) Butter, Cetearyl Glucoside, Ammonium Acryloyldimethyltaurate/Vp Copolymer, Phenoxyethanol, Potassium Cetyl Phosphate, Methylparaben, Dimethiconol, Ascorbyl Glucoside, Fragrance, Propylene Glycol, Xanthan Gum, Ethylparaben, Pentylene Glycol, Sodium Hyaluronate, Tocopheryl Acetate, Hibiscus Abelmoschus Extract, Retinyl Palmitate, Phyllanthus Emblica Fruit Extract, Hydrolyzed Rice Protein, Tetrasodium Edta, Sorbitan Laurate, T-Butyl Alcohol, Potassium Hydroxide, Carbomer, Panax Ginseng Root Extract, Dipropylene Glycol, Dimethylmethoxy Chromanol, Polysorbate 20, Hydroxyethylcellulose, Acetyl Dipeptide-1 Cetyl Ester, Morus Alba Leaf Extract, Silica, Sodium Benzoate, Tocopherol, Palmitoyl Tripeptide-1, Palmitoyl Tetrapeptide-7, Titanium Dioxide"}]}';
+
+
+var treatments_info = '{"product_name": ['+
+'{"name": "Versed Vacation Eyes Brightening Eye Gel - 0.5 fl oz","brand_name": "Versed","brand_name_url": "https://www.target.com/b/versed/-/N-k436q","price": "$17.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_4df96f77-5bc6-4a94-b88e-5bee41fd363a?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": " Water, Butylene Glycol, Dipropylene Glycol, Glycerin, Panax Ginseng Root Extract, Coffea Arabica Seed Extract, Sodium Ascorbyl Phosphate, Niacinamide, Citric Acid, Tocopheryl Acetate, Polysorbate 20, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Phenoxyethanol, Sodium Hydroxide, Ammonium Acryloyldimethyltaurate/Vp Copolymer, Propylene Glycol, 1, 2-Hexanediol, Trisodium Ethylenediamine Disuccinate, Potassium Sorbate, Sodium Benzoate"},' +
+'{"name": "LOreal Paris Revitalift Derm Intensives Glycolic Acid Serum - 1 fl oz","brand_name": "LOreal Paris","brand_name_url": "https://www.target.com/b/loreal-paris/-/N-54uos","price": "$23.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_fcaabca7-476f-4998-b7f6-f70a15153027?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Aqua/Water/Eau, Glycolic Acid, Glycerin, Alcohol Denat., Sodium Hydroxide, Aloe Barbadensis Leaf Juice, Sodium Hyaluronate, Hydroxyethylcellulose, Ascorbyl Glucoside, Citric Acid, Potassium Sorbate, Sodium Benzoate."},' +
+'{"name": "Versed Photos Please Brightening Tightening Face Mask - 1.5 fl oz","brand_name": "Versed","brand_name_url": "https://www.target.com/b/versed/-/N-k436q","price": "$9.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_f6e4dc41-0967-4e1d-b9b2-370b98e26e9c?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Kaolin, Glyceryl Stearate Se, Propylene Glycol, Coco-Caprylate/Caprate, Polysorbate 20, Sorbitan Stearate, Cetyl Alcohol, Glyceryl Stearate, Peg-100 Stearate, Turmeric, Witch Hazel, Bentonite, Citric Acid, Tocopheryl Acetate, Magnesium Aluminum Silicate, 1, 2-Hexanediol, Phenoxyethanol, Xanthan Gum, Trisodium Ethylenediamine Disuccinate, Glycerin, Titanium Dioxide, Sodium Benzoate, Potassium Sorbate"},' +
+'{"name": "Versed Just Breathe Clarifying Serum - 1 fl oz","brand_name": "Versed","brand_name_url": "https://www.target.com/b/versed/-/N-k436q","price": "$19.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_9abdecaf-5bb0-425d-b262-c43d68b6fb39?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Glycerin, Niacinamide, Salix Nigra Bark Extract, Zinc Gluconate, Sodium Hyaluronate, Salicylic Acid, Aesculus Hippocastanum Seed Extract, 1, 2-Hexanediol, Butylene Glycol, Phenoxyethanol, Peg-40 Hydrogenated Castor Oil, Hydroxyethylcellulose, Yeast Extract, Glyceryl Acrylate/Acrylic Acid Copolymer, Trisodium Ethylenediamine Disuccinate, Ammonium Glycyrrhizate, Biotin, Panthenol, Propylene Glycol, Caffeine"},' +
+'{"name": "Versed Nix It Complexion Solution - 0.5 fl oz","brand_name": "Versed","brand_name_url": "https://www.target.com/b/versed/-/N-k436q","price": "$12.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_dea116b6-e5ad-406b-93b4-8950994530a8?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Caprylic/Capric Triglyceride, Isopropyl Myristate, Isopropyl Palmitate, Helianthus Annuus Seed Oil, Salicylic Acid, Tea TreeOil, Rosmarinus Officinalis Leaf Oil, Oenothera Biennis Oil, Citrus Limon Peel Oil, Lavandula Angustifolia Oil, Calophyllum Inophyllum Seed Oil, Tocopheryl Acetate, Avena Sativa Kernel Oil, Oryza Sativa Bran Oil, Tetrahexyldecyl Ascorbate, Ethylhexyl Palmitate, Silica Dimethyl Silylate, Butylene Glycol, Caprylyl Glycol, Phenoxyethanol, Hexylene Glycol, Sodium Hyaluronate, Limonene, Linalool"},' +
+'{"name": "Versed Find Clarity Purifying Face Mask - 1.5 fl oz","brand_name": "Versed","brand_name_url": "https://www.target.com/b/versed/-/N-k436q","price": "$9.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_cc0a6e3f-e9e2-4b28-8534-894f4209fc23?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Water, Kaolin, Glyceryl Stearate Se, Coco-Caprylate/Caprate, Polysorbate 20, Propylene Glycol, Sorbitan Stearate, Cetyl Alcohol, Glyceryl Stearate, Peg-100 Stearate, Bentonite, Charcoal Powder, Titanium Dioxide (Ci 77891), 1, 2-Hexanediol, Tocopheryl Acetate, Citric Acid, Phenoxyethanol, Magnesium Aluminum Silicate, Xanthan Gum, Trisodium Ethylenediamine Disuccinate"},' +
+'{"name": "Thayers Witch Hazel Alcohol Free Toner - Rose Petal - 12 fl oz","brand_name": "Thayers Natural Remedies","brand_name_url": "https://www.target.com/b/thayers-natural-remedies/-/N-dyumm","price": "$10.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_9558cf52-9337-436e-8b3c-099887bc0d3c?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Purified Water, Witch Hazel, Aloe Vera, Glycerin, Phenoxyethanol, Rosa Centifolia Flower Water, Fragrance, Citric Acid, Citrus Grandis Seed Extract"},' +
+'{"name": "Que Bella Relaxing Lavender Mud Face Mask - 0.5oz","brand_name": "Que Bella","brand_name_url": "https://www.target.com/b/que-bella/-/N-55qpg","price": "$1.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_fd637e46-eeef-42e9-8ea0-da403f3c4b85?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Aqua (Water), Bentonite, Stearic Acid, Kaolin, Propylene Glycol, Polysorbate 20, Talc, Silt, Glyceryl Stearate, Beeswax, Cetearyl Alcohol, Propylparaben, Sodium Hydroxide, Triethylene Glycol, Aloe Barbadensis Leaf Juice, Laminaria Digitata Extract, Fucus Vesiculosus Extract, Tetrasodium Pyrophosphate, Methylparaben, Sorbic Acid, Sodium Benzoate, Magnesium Chloride, Magnesium Nitrate, Methylchloroisothiazolinone, Methylisothiazolinone, Potassium Sorbate, Citric Acid, Lavandula Angustifolia Oil, Chondrus Crispus Extract, Linalool, Benzyl Alcohol, Titanium Dioxide"},' +
+'{"name": "Que Bella Professional Detoxifying Black Peel Off Face Mask - 0.5oz","brand_name": "Que Bella","brand_name_url": "https://www.target.com/b/que-bella/-/N-55qpg","price": "$2.49","image_url": "https://target.scene7.com/is/image/Target/GUEST_ef28c76b-aeca-4179-9939-ef47488980f9?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Aqua (Water), Polyvinyl Alcohol, Alcohol Denat, Polysorbate 20, Charcoal Powder, Benzyl Alcohol, Pvp, Cellulose Gum, Fragrance, Sodium Acetate, Methyl Acetate, Ethylhexylglycerin, Citric Acid, Vitamin E, Iron Oxides"},' +
+'{"name": "Que Bella Hydrating Pineapple Peel Off Face Mask - 0.35oz","brand_name": "Que Bella","brand_name_url": "https://www.target.com/b/que-bella/-/N-55qpg","price": "$1.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_2dad36ff-9a68-4b6f-94ed-df383951d7e3?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Aqua (Water), Polyvinyl Alcohol, Alcohol Denat., Peg-32, Peg-40 Hydrogenated Castor Oil, Fragrance, Sodium Pca, Glycerin, Sodium Acetate, Methyl Acetate, Xanthan Gum, Ethylhexylglycerin, Ananas Sativus Fruit Extract, Sodium Hyaluronate, Phenoxyethanol, Sodium Benzoate, Potassium Sorbate, Tocopherol, Benzyl Alcohol, Ci 15985 (Yellow 6), Ci 19140 (Yellow 5)"},' +
+'{"name": "Differin Adapalene Gel 0.1% Acne Treatment - 15g","brand_name": "Differin","brand_name_url": "https://www.target.com/b/differin/-/N-nikv8","price": "$12.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_0240e2c4-1771-4f06-beeb-172a9a88fc4a?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Retinoid, Carbomer 940, Edetate Disodium, Methylparaben, Poloxamer 182, Propylene Glycol, Purified Water, Sodium Hydroxide"},' +
+'{"name": "Que Bella Pore Minimizing Mud Face Mask - 0.5oz","brand_name": "Que Bella","brand_name_url": "https://www.target.com/b/que-bella/-/N-55qpg","price": "$1.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_e349904d-7af7-4ad3-8a2e-7a1d14f44533?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Aqua (Water), Bentonite, Stearic Acid, Kaolin, Propylene Glycol, Talc, Alcohol Denat., Glyceryl Stearate, Beeswax, Phenoxyethanol, Cetearyl Alcohol, Propanediol, Methylparaben, Camphor, Gossypium Herbaceum Seed Oil, Mentha Piperita Oil, Alcohol, Sodium Hydroxide, Butylparaben, Limonene, Ethylparaben, Glycerin, Propylparaben, Iris Florentina Root Extract, Tetrasodium Pyrophosphate, Rosmarinus Officinalis Leaf Extract, Urtica Dioica Leaf Extract, Retinyl Palmitate, Zinc Sulfate, Potassium Sorbate, Sodium Benzoate, Titanium Dioxide"},' +
+'{"name": "Max. Strength Acne Medication - 1oz - Up&Up™","brand_name": "Up&Up","brand_name_url": "https://www.target.com/b/upup/-/N-4yn38","price": "$3.59","image_url": "https://target.scene7.com/is/image/Target/GUEST_ac2404a9-49ff-4a51-a511-96f60d41cd10?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Benzoyl Peroxide, Carbomer, Disodium Edta, Hydroxypropyl Methylcellulose, Laureth-4, Sodium Hydroxide, Water"},' +
+'{"name": "Acne Spot Treatment .75oz - Up&Up™","brand_name": "Up&Up","brand_name_url": "https://www.target.com/b/upup/-/N-4yn38","price": "$3.79","image_url": "https://target.scene7.com/is/image/Target/GUEST_1bb8ad2f-f6cb-425a-90b2-cbc1e03c8ee1?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Benzoyl Peroxide, Water, Carbomer, Ethylhexylglycerin, Sodium Hydroxide, Chlorphenesin, Disodium Edta, Laureth-4, Hydroxypropyl Methylcellulose"},' +
+'{"name": "Deep Cleaning Pore Treatment - 8 fl oz - Up&Up™","brand_name": "Up&Up","brand_name_url": "https://www.target.com/b/upup/-/N-4yn38","price": "$2.59","image_url": "https://target.scene7.com/is/image/Target/GUEST_c7541656-a245-4f7d-809a-b17f4a83a84a?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Salicylic Acid, Water, Alcohol Denat., Glycerin, Isoceteth-20, Peg-32, Sodium Citrate, Fragrance, Propylene Glycol, Dimethicone Propyl Pg-Betaine, Benzophenone-4, Algae Extract, Aloe Barbadensis Leaf Juice, Blue 1"},' +
+'{"name": "Neutrogena Alcohol-Free Toner-8.5oz","brand_name": "Neutrogena","brand_name_url": "https://www.target.com/b/neutrogena/-/N-5xvoe","price": "$5.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_e5617ff4-4e20-4df8-8de8-bd9e116301af?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Purified Water, Peg-4, Butylene Glycol, Polysorbate 20, Ceteth-24, Choleth-24, Panthenol, Glycereth-26, Sodium Pca, Benzalkonium Chloride, Disodium Edta, Sodium Chloride, Methylparaben, Propylparaben, Fragrance"},' +
+'{"name": "Que Bella Deep Cleansing Aloe Vera Cream Face Mask - 0.5oz", "brand_name": "Que Bella",brand_name_url": "https://www.target.com/b/que-bella/-/N-55qpg","price": "$1.99","image_url": "https://target.scene7.com/is/image/Target/GUEST_a5dfd36b-c2c8-487a-adfd-464bc27c7739?wid=199&hei=199&qlt=80&fmt=pjpeg","ingredients": "Aqua (Water), Glycerin, Magnesium Aluminium Silicate, Nylon-12, Butylene Glycol, Propanediol, Phenoxyethanol, Xanthan Gum, Silica, Aloe Barbadensis Leaf Juice, Witch Hazel, Alcohol, Limonene, Methylparaben, Citrus Limon Peel Oil, Tea Tree Oil, Butylparaben, Arctium Majus Root Extract, Iris Florentina Root Extract, Ethylparaben, Zinc Sulfate, Propylparaben, Citral, Retinyl Palmitate, Biotin, Potassium Sorbate, Citric Acid"}]}';
+// ---------------------------------------------------------------------------------------- //
+
+var dry_good = ["Glycerin", "Hyaluronic Acid", "Linoleic Acid", "Hemp Seed Pil", "Ceramide", "Shea Butter"];
+
+var oily_good = ["Bentonite", "Colloidal Sulfur", "Beta hydroxy acid", "Witch Hazel", "Soybean Extract"];
+var oily_bad = ["Mineral oil", "Shea Butter"];
+
+var acne_prone_good = ["Salicylic Acid", "Benzyl Peroxide", "Niacinamide", "Madecassoide", "Soybean Extract"];
+var acne_prone_bad = ["Dimethicone", "Shea Butter"];
+
+var wrinkles_good = ["Antioxidant", "Polyphenol", "Green Tea", "Retinol", "Ceramide", "Peptide", "Hyaluronic Acid", "Glycolic Acid", "Retinyl Palmitate", "Retinyl Acetate"];
+
+var hyperpigmentation_good = ["Glycolic Acid", "Lactic Acid", "Malic Acid", "Citric Acid", "Tartatic Acid", "Vitamin C", "Azelic Acid", "Alpha Arbutic",
+                              "Retinol", "Retinoid", "Peptide", "Soybean Extract"];
+
+var sensitive_good = ["Polyphenol", "Colostrum", "Glycerin", "Lacto bionic acid", "Polyhydroxy acid", "Gluconolactone", "Galactose"];
+
+var not_oilyacne_bad = ["Mineral Oil", "Hydroquinone", "Phthalates", "Mercury", "Petrolatum", "Sulfates", "Oxybenzone", "Sodium lauryl sulfate", "Triclosan", "Triclocarban",
+                        "Polyethylene","Toluene", "Phenoxyethanol", "Formaldehyde", "Sodium lauryl sulphate", "Fragrance"];
+
+// dry good products: cleanser - CeraVe Hydrating Facial Cleanser for Normal to Dry Skin, moisturizer - CeraVe PM Facial Moisturizing Lotion,
+//										treatment - Versed Photos Please Brightening Tightening Face Mask
+// dry good ingredients: Glycerin, Hyaluronic Acid
+// dry bad ingredients: "Mineral Oil", "Hydroquinone", "Phthalates", "Mercury", "Petrolatum", "Sulfates", "Oxybenzone", "Sodium lauryl sulfate", "Triclosan", "Triclocarban",
+//                        "Polyethylene","Toluene", "Phenoxyethanol", "Formaldehyde", "Sodium lauryl sulphate", "Fragrance"
+
+// oily good products: cleanser - Aveeno Positively Radiant Skin Brightening Daily Scrub, moisturizer - Aveeno Positively Radiant Daily Face Soy Moisturizer
+//											treatment - Versed Find Clarity Purifying Face Mask
+// oily good ingredients: Soybean protein, soybean extract
+// oily bad ingredients: "Mineral oil", "Shea Butter"
+
+// acne prone good products: cleanser - Neutrogena Exfoliating Blackhead Salicylic Acid Face Scrub, moisturizer - Clean & Clear Essentials Dual Action Facial Moisturizer,
+//														treatment - Versed Just Breathe Clarifying Serum
+// acne prone good ingredients: Salicylic acid, Niacinamide
+// acne prone bad ingredients: "Dimethicone", "Shea Butter"];
+
+// wrinkles good products: cleanser - CeraVe Hydrating Facial Cleanser for Normal to Dry Skin, moisturizer - Olay Regenerist Retinol24 Night Moisturizer
+//												treatment - L'Oreal Paris Revitalift Derm Intensives Glycolic Acid Serum
+// winkles good ingredients: Ceramide, Retinol, Glycolic Acid
+// wrinkles bad ingredients: "Mineral Oil", "Hydroquinone", "Phthalates", "Mercury", "Petrolatum", "Sulfates", "Oxybenzone", "Sodium lauryl sulfate", "Triclosan", "Triclocarban",
+//                        "Polyethylene","Toluene", "Phenoxyethanol", "Formaldehyde", "Sodium lauryl sulphate", "Fragrance"
+
+// hyperpigmentation good products: cleanser - Versed Wash It Out Gel Cleanser, moisturizer: CeraVe Facial Moisturizing Lotion AM with Sunscreen Broad Spectrum SPF 30,
+//																	treatment - L'Oreal Paris Revitalift Derm Intensives Glycolic Acid Serum
+// hyperpigmentation good ingredients: Lactic acid, hyaluronic acid, glycolic acid, citric acid
+// hyperpigmentation bad ingredients: "Mineral Oil", "Hydroquinone", "Phthalates", "Mercury", "Petrolatum", "Sulfates", "Oxybenzone", "Sodium lauryl sulfate", "Triclosan", "Triclocarban",
+//                        "Polyethylene","Toluene", "Phenoxyethanol", "Formaldehyde", "Sodium lauryl sulphate", "Fragrance"
+
+// sensitive good products: cleanser - CeraVe Hydrating Facial Cleanser for Normal to Dry Skin, moisturizer - Cetaphil Moisturizing Lotion,
+//													treatment - L'Oreal Paris Revitalift Derm Intensives Glycolic Acid Serum
+// sensitive good ingredients: glycerin
+// sensitive bad ingredients: "Mineral Oil", "Hydroquinone", "Phthalates", "Mercury", "Petrolatum", "Sulfates", "Oxybenzone", "Sodium lauryl sulfate", "Triclosan", "Triclocarban",
+//                        "Polyethylene","Toluene", "Phenoxyethanol", "Formaldehyde", "Sodium lauryl sulphate", "Fragrance"
+function displayRadioValue() {
+			var ele = document.getElementsByName('condition');
+			if(ele[0].checked)
+				document.getElementById("result").innerHTML
+						= "This is your " + ele[0].value + " skin care routine: CeraVe Hydrating Facial Cleanser for Normal to Dry Skin, CeraVe PM Facial Moisturizing Lotion, and  Versed Photos Please Brightening Tightening Face Mask. These contain the beneficial ingredients glycerin and hyaluronic acid. Avoid ingredients such as mineral oil and sulfates.";
+            else if(ele[1].checked)
+				      document.getElementById("result").innerHTML
+						  = "This is your " + ele[1].value + " skin care routine: Aveeno Positively Radiant Skin Brightening Daily Scrub, Aveeno Positively Radiant Daily Face Soy Moisturizer, and Versed Find Clarity Purifying Face Mask. These contain the beneficial ingredient soybean extract. Avoid ingredients such as mineral oil and shea butter.";
+            else if(ele[2].checked)
+				document.getElementById("result").innerHTML
+						= "This is your " +ele[2].value + " skin care routine: Neutrogena Exfoliating Blackhead Salicylic Acid Face Scrub, Clean & Clear Essentials Dual Action Facial Moisturizer, and Versed Just Breathe Clarifying Serum. These contain the beneficial ingredients salicylic acid and niacinamide. Avoid ingredients such as dimethicone and shea butter.";
+
+            else if(ele[3].checked)
+				document.getElementById("result").innerHTML
+						= "This is your " +ele[3].value + " skin care routine: CeraVe Hydrating Facial Cleanser for Normal to Dry Skin, Olay Regenerist Retinol24 Night Moisturizer, and L'Oreal Paris Revitalift Derm Intensives Glycolic Acid Serum. These contain the beneficial ingredients ceramide, retinol, and glycolic acid. Avoid ingredients such as hydroquinone and oxybenzone." ;
+            else if(ele[4].checked)
+				document.getElementById("result").innerHTML
+						= "This is your "+ele[4].value + " skin care routine: Versed Wash It Out Gel Cleanser, CeraVe Facial Moisturizing Lotion AM with Sunscreen Broad Spectrum SPF 30, and L'Oreal Paris Revitalift Derm Intensives Glycolic Acid Serum. These contain the beneficial ingredients lactic acid, hyaluronic acid, glycolic acid, and citric acid. Avoid ingredients such as phtalates and mercury.";
+            else if(ele[5].checked)
+				document.getElementById("result").innerHTML
+						= "This is your "+ele[5].value + " skin care routine: CeraVe Hydrating Facial Cleanser for Normal to Dry Skin, Cetaphil Moisturizing Lotion, and L'Oreal Paris Revitalift Derm Intensives Glycolic Acid Serum. These contain the beneficial ingredient glycerin. Avoid ingredients such as sulfates and fragrances.";
+    }
+   </script>
   <body>
     <script src="script.js"></script>
-    <img id="ellipse_page_2" src="ellipse19.png" alt="ellipsebar">
-    <img id="dry_bar" src="Rectangle8.png" alt="dbar">
-    <img id="oily_bar" src="Rectangle8.png" alt="obar">
-    <img id="acne_bar" src="Rectangle8.png" alt="acbar">
-    <img id="anti_bar" src="Rectangle8.png" alt="anbar">
-    <img id="hyper_bar" src="Rectangle8.png" alt="hbar">
-    <img id="sensit_bar" src="Rectangle8.png" alt="sbar">
+    <img id="ellipse_page_2" src="Logo.png" alt="ellipsebar">
+    <h2> </h2>
+    <p>
+     <br> <br><br> <br><br> <br><br> <br>
+		Select the word that best describes your skin.
+	</p>
+	<input type="radio" name="condition" value="dry" >Dry
+    <br>
+	<input type="radio" name="condition" value="oily">Oily
+    <br>
+	<input type="radio" name="condition" value="acne">Acne Prone
+    <br>
+    <input type="radio" name="condition" value="wrinkly">Wrinkly
+	<br>
+    <input type="radio" name="condition" value="hyperpigmented">Hyperpigmented
+    <br>
+    <input type="radio" name="condition" value="sensitive">Sensitive
+
+	<br>
+	<br>
+	<button type="button" onclick="displayRadioValue()">
+		Submit
+	</button> <br>
+
+
+
+	<br>
+	<p id="products"> </p>
+	<div id="result"></div>
+  <br>
+  <br>
+
   </body>
 </html>
